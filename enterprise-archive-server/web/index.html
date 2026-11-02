@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enterprise Archive Server</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">EA</span><div><strong>Enterprise Archive Server</strong><small>Linux storage administration</small></div></div>
+    <span class="local-pill">LOCAL DEMO</span>
+  </header>
+  <main>
+    <section class="welcome">
+      <p class="eyebrow">ARCHIVE MANAGEMENT</p>
+      <h1>Keep project files<br><span>safe and organized.</span></h1>
+      <p class="intro">Create compressed archives, restore backups, review storage, and check recent activity from one simple dashboard.</p>
+      <div class="notice"><strong>Local demo server</strong><br>Available only on this computer at <code>127.0.0.1</code>. Keep the terminal running while you use this page.</div>
+    </section>
+
+    <section class="grid" aria-label="Archive server actions">
+      <article class="card"><div class="icon">＋</div><h2>Create archive</h2><p>Package a file or folder into a compressed archive.</p><form action="/cgi-bin/archive.cgi" method="post"><input type="hidden" name="action" value="create"><label>Linux file or folder path<input name="source" placeholder="/home/rishi/archive-demo/source" required></label><label>Archive name<input name="name" placeholder="quarterly_demo" required></label><button type="submit">Create archive <span>→</span></button></form></article>
+      <article class="card"><div class="icon">▤</div><h2>Browse archives</h2><p>See saved archive names and file sizes.</p><form action="/cgi-bin/archive.cgi" method="post"><input type="hidden" name="action" value="list"><button type="submit" class="secondary">List archives <span>→</span></button></form></article>
+      <article class="card"><div class="icon">⌕</div><h2>Search archive</h2><p>Find a filename stored inside an archive.</p><form action="/cgi-bin/archive.cgi" method="post"><input type="hidden" name="action" value="search"><label>Archive filename<input name="archive" placeholder="quarterly_demo.tar.gz" required></label><label>Filename text<input name="query" placeholder="linux" required></label><button type="submit">Search files <span>→</span></button></form></article>
+      <article class="card"><div class="icon">↧</div><h2>Extract archive</h2><p>Safely unpack an archive to a new restore folder.</p><form action="/cgi-bin/archive.cgi" method="post"><input type="hidden" name="action" value="extract"><label>Archive filename<input name="archive" placeholder="quarterly_demo.tar.gz" required></label><button type="submit">Extract archive <span>→</span></button></form></article>
+      <article class="card"><div class="icon">⟳</div><h2>Project backup</h2><p>Create a backup or restore a listed backup to a new folder.</p><form action="/cgi-bin/archive.cgi" method="post"><input type="hidden" name="action" value="backup"><button type="submit">Create backup <span>→</span></button></form><form class="compact-form" action="/cgi-bin/archive.cgi" method="post"><input type="hidden" name="action" value="restore"><label>Backup filename<input name="backup" placeholder="project_backup_....tar.gz" required></label><button type="submit" class="secondary">Restore backup <span>→</span></button></form></article>
+      <article class="card"><div class="icon">▦</div><h2>Disk usage</h2><p>Review free space and project folder sizes.</p><form action="/cgi-bin/archive.cgi" method="post"><input type="hidden" name="action" value="disk"><button type="submit" class="secondary">Show disk usage <span>→</span></button></form></article>
+      <article class="card"><div class="icon">⌑</div><h2>File permissions</h2><p>Change the safe demonstration file's octal permission.</p><form action="/cgi-bin/archive.cgi" method="post"><input type="hidden" name="action" value="permissions"><label>Permission (3 or 4 octal digits)<input name="mode" inputmode="numeric" placeholder="640" pattern="[0-7]{3,4}" required></label><button type="submit">Apply permission <span>→</span></button></form></article>
+      <article class="card"><div class="icon">≋</div><h2>Activity log</h2><p>Review the most recent recorded project actions.</p><form action="/cgi-bin/archive.cgi" method="post"><input type="hidden" name="action" value="log"><button type="submit" class="secondary">View activity <span>→</span></button></form></article>
+    </section>
+    <footer><span>Enterprise Archive Server</span><span>Bash + standard Linux utilities</span></footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,3 @@
+# Replace /home/your-user with the actual home path on your Linux VM.
+# Find it by running: echo "$HOME"
+0 18 * * * /home/your-user/enterprise-archive-server/scripts/archive_server.sh --backup
